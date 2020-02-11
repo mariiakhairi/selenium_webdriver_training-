@@ -1,9 +1,8 @@
-plugins {
-    id 'java'
-}
 
-group 'ru.sqa'
+group 'ru.stqa'
 version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
@@ -12,10 +11,14 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.seleniumhq.selenium:selenium-java:3.0.1'
 }
 
-// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+test {
+    //maxParallelForks = 10
+}
 
-
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
