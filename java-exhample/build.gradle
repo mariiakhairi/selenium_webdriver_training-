@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.sqa'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
+}
+
+// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+
+
