@@ -19,8 +19,8 @@ public class TestBase {
 
   @Before
   public void start() {
-    FirefoxOptions options = new FirefoxOptions();
-    options.setBinary(new FirefoxBinary(new File("C:\\Program Files\\Firefox Nightly\\firefox.exe")));
+    FirefoxOptions options = new FirefoxOptions().setLegacy(true);
+    options.setBinary(new FirefoxBinary(new File("C:\\Program Files\\firefox-sdk\\bin\\firefox.exe")));
     driver = new FirefoxDriver(options);
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
