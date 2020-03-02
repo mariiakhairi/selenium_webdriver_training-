@@ -4,10 +4,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -16,7 +19,9 @@ public class TestBase {
 
   @Before
   public void start() {
-    driver = new FirefoxDriver();
+    FirefoxOptions options = new FirefoxOptions();
+    options.setBinary(new FirefoxBinary(new File("C:\\Program Files\\Firefox Nightly\\firefox.exe")));
+    driver = new FirefoxDriver(options);
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
