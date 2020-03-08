@@ -26,6 +26,8 @@ public class AdminMenuTest {
     login();
     driver.findElement(By.xpath("//li[@id='app-']/a/span[2]")).click();
     driver.findElement(By.xpath("//td[@id='content']/h1")).click();
+    driver.findElement(By.xpath("//li[@id='doc-logotype']/a/span")).click();
+    driver.findElement(By.xpath("//td[@id='content']/h1")).click();
   }
 
 
