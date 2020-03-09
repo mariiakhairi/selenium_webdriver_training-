@@ -29,6 +29,13 @@ public class AdminMenuTest {
       driver.findElements(By.xpath("//*[@id='app-']/a/span")).get(a).click();
       Thread.sleep(2000);
       isElementPresent(By.xpath("//*[@id='content']/h1"));
+      if (areElementsPresent(By.xpath("//ul[@class='docs']/li"))){
+        List<WebElement> subItem = driver.findElements(By.xpath("//ul[@class='docs']/li"));
+        for (int j=0; j<subItem.size(); j++){
+          driver.findElements(By.xpath("//ul[@class='docs']/li")).get(j).click();
+          isElementPresent(By.xpath("//*[@id='content']/h1"));
+        }
+      }
     }
   }
 
@@ -54,7 +61,7 @@ public class AdminMenuTest {
       return false;
     }
   }
-  public boolean areElementsPresent(WebDriver driver, By locator) {
+  public boolean areElementsPresent(By locator) {
     return driver.findElements(locator).size() > 0;
   }
 
