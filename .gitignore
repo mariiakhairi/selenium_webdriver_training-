@@ -9,3 +9,8 @@ buildNumber.properties
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+java-exhample/.gradle/5.2.1/executionHistory/executionHistory.bin
+java-exhample/.gradle/5.2.1/fileHashes/fileHashes.bin
+java-exhample/.gradle/5.2.1/javaCompile/classAnalysis.bin
+java-exhample/.gradle/5.2.1/javaCompile/javaCompile.lock
+java-exhample/.gradle/buildOutputCleanup/buildOutputCleanup.lock
