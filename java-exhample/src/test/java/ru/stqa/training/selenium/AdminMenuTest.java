@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class AdminMenuTest {
@@ -24,10 +25,11 @@ public class AdminMenuTest {
   public void testAdminMenu() throws Exception {
     gotoTestPage();
     login();
-    driver.findElement(By.xpath("//li[@id='app-']/a/span[2]")).click();
-    driver.findElement(By.xpath("//td[@id='content']/h1")).click();
-    driver.findElement(By.xpath("//li[@id='doc-logotype']/a/span")).click();
-    driver.findElement(By.xpath("//td[@id='content']/h1")).click();
+    for (int a=0; a<33; a=a+2 ) {
+      driver.findElements(By.xpath("//*[@id='app-']/a/span")).get(a).click();
+      Thread.sleep(2000);
+      isElementPresent(By.xpath("//*[@id='content']/h1"));
+    }
   }
 
 
