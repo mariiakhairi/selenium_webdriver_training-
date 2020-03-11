@@ -29,15 +29,15 @@ public class CountrySortingTest {
     driver.findElements(By.xpath("//*[@id='app-']/a/span[2]")).get(2).click();
     Thread.sleep(5000);
     List<WebElement> countryList = driver.findElements(By.xpath(("//tbody/tr/td[5]")));
-    for (int r = 0; r < countryList.size(); r++) {
-      List<String> countries = new ArrayList<String>();
-      countries.add(countryList.get(r).getText().toLowerCase());
-      System.out.println(countries);
-//      int len = countries.size();
-//      for (int i = 0; i < len; i++)
-//        for(int k = i+1 ; k < len ; k++){
-//         compare(countries.get(i), countries.get(k))
-//        }
+    for (int i = 0; i < countryList.size(); i++) {
+      //List<String> countries = new ArrayList<String>();
+      String fE = countryList.get(i).getText().toLowerCase();
+      for(int j = i+1; j<countryList.size()-1; j++) {
+        String sE = countryList.get(j).getText().toLowerCase();
+        if (fE.compareTo(sE) < 0) {
+          System.out.println(fE +"sorted correctly before "+sE);
+        }
+      }
     }
   }
 

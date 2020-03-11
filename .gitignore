@@ -14,3 +14,6 @@ java-exhample/.gradle/5.2.1/fileHashes/fileHashes.bin
 java-exhample/.gradle/5.2.1/javaCompile/classAnalysis.bin
 java-exhample/.gradle/5.2.1/javaCompile/javaCompile.lock
 java-exhample/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+java-exhample/.gradle/5.2.1/executionHistory/executionHistory.bin
+*.bin
+*.lock
