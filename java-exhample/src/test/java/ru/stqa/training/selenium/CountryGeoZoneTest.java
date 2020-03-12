@@ -36,6 +36,19 @@ public class CountryGeoZoneTest {
         }
       }
     }
+    driver.findElements(By.xpath("//*[@id='app-']/a/span[2]")).get(2).click();
+    Thread.sleep(5000);
+    driver.findElement(By.linkText("Canada")).click();
+    List<WebElement> geoZone2 = driver.findElements(By.xpath("//table[@id='table-zones']/tbody/tr/td[3]"));
+    for (int i = 0; i < geoZone2.size(); i++) {
+      String g = geoZone2.get(i).getText().toLowerCase();
+      for (int j = i + 1; j < geoZone2.size() - 1; j++) {
+        String m = geoZone2.get(j).getText().toLowerCase();
+        if (g.compareTo(m) < 0) {
+          System.out.println(g + "sorted correctly before " + m);
+        }
+      }
+    }
   }
 
 
