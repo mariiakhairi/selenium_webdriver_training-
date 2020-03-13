@@ -23,29 +23,29 @@ public class GeoZoneTest {
   public void testAdminMenu() throws Exception {
     gotoTestPage("http://localhost/litecart/admin/login.php");
     login();
-    driver.findElements(By.xpath("//*[@id='app-']/a/span[2]")).get(5).click();
-    Thread.sleep(5000);
+    Thread.sleep(2000);
+    driver.findElements(By.xpath("//li[@id='app-']/a/span[2]")).get(5).click();
     driver.findElement(By.linkText("United States of America")).click();
-    List<WebElement> geoZone = driver.findElements(By.xpath("//table[@id='table-zones']/tbody/tr/td[3]"));
-    for (int i = 0; i < geoZone.size(); i++) {
+    List<WebElement> geoZone = driver.findElements(By.cssSelector("table.dataTable option[selected]"));
+    for (int i = 1; i < geoZone.size(); i=i+2) {
       String g = geoZone.get(i).getAttribute("textContent").toLowerCase();
-      for (int j = i + 1; j < geoZone.size() - 1; j++) {
+      for (int j = i + 2; j < geoZone.size() - 1; j=j+2) {
         String m = geoZone.get(j).getAttribute("textContent").toLowerCase();
         if (g.compareTo(m) < 0) {
-          System.out.println(g + "sorted correctly before " + m);
+          System.out.println(g + " is sorted correctly before " + m);
         }
       }
     }
     driver.findElements(By.xpath("//*[@id='app-']/a/span[2]")).get(5).click();
-    Thread.sleep(5000);
+    Thread.sleep(2000);
     driver.findElement(By.linkText("Canada")).click();
-    List<WebElement> geoZone2 = driver.findElements(By.xpath("//table[@id='table-zones']/tbody/tr/td[3]"));
-    for (int i = 0; i < geoZone2.size(); i++) {
-      String g = geoZone2.get(i).getAttribute("textContent").toLowerCase();
-      for (int j = i + 1; j < geoZone2.size() - 1; j++) {
-        String m = geoZone2.get(j).getAttribute("textContent").toLowerCase();
-        if (g.compareTo(m) < 0) {
-          System.out.println(g + "sorted correctly before " + m);
+    List<WebElement> geoZone2 = driver.findElements(By.cssSelector("table.dataTable option[selected]"));
+    for (int i = 1; i < geoZone2.size(); i=i+2) {
+      String k = geoZone2.get(i).getAttribute("textContent").toLowerCase();
+      for (int j = i + 2; j < geoZone2.size() - 1; j=j+2) {
+        String l = geoZone2.get(j).getAttribute("textContent").toLowerCase();
+        if (k.compareTo(l) < 0) {
+          System.out.println(k + " is sorted correctly before " + l);
         }
       }
     }

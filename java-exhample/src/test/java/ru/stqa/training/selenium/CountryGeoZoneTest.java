@@ -23,8 +23,9 @@ public class CountryGeoZoneTest {
   public void testAdminMenu() throws Exception {
     gotoTestPage("http://localhost/litecart/admin/login.php");
     login();
+    Thread.sleep(2000);
     driver.findElements(By.xpath("//*[@id='app-']/a/span[2]")).get(2).click();
-    Thread.sleep(5000);
+    Thread.sleep(2000);
     driver.findElement(By.linkText("United States")).click();
     List<WebElement> geoZone = driver.findElements(By.xpath("//table[@id='table-zones']/tbody/tr/td[3]"));
     for (int i = 0; i < geoZone.size(); i++) {
@@ -37,7 +38,7 @@ public class CountryGeoZoneTest {
       }
     }
     driver.findElements(By.xpath("//*[@id='app-']/a/span[2]")).get(2).click();
-    Thread.sleep(5000);
+    Thread.sleep(2000);
     driver.findElement(By.linkText("Canada")).click();
     List<WebElement> geoZone2 = driver.findElements(By.xpath("//table[@id='table-zones']/tbody/tr/td[3]"));
     for (int i = 0; i < geoZone2.size(); i++) {
